@@ -1,0 +1,230 @@
+# Dataset candidate catalog.
+#
+# Copy the example entry below for each dataset you want to evaluate.
+# Keep detailed notes in explorations/<slug>/notes.md.
+
+datasets:
+  - slug: cdc-places-county-health
+    title: CDC PLACES County Health Measures
+    status: exploring
+    source_url: https://www.cdc.gov/places/
+    license: Public domain
+    domain: public health
+    formats:
+      - API
+      - csv
+      - rds
+    size_estimate: Focused county extract is small; full wide county GIS-friendly file has about 3,144 rows and 167 columns
+    candidate_tutorial: Local public health patterns with CDC PLACES
+    learning_goals:
+      - use CDC PLACES as a local public health data source
+      - distinguish modeled estimates from direct survey counts
+      - compare county-level health measures
+      - interpret rankings, maps, and bivariate patterns carefully
+    packages:
+      - readr
+      - tidyverse
+      - sf
+      - tigris
+    tutorial_fit:
+      target_audience: Students learning to explore local public health data with AI support
+      final_artifact: A two-section Quarto report with county health rankings and a map or comparison chart
+      analysis_path:
+        - inspect CDC PLACES county measures and source notes
+        - compare obesity, diabetes, smoking, physical inactivity, poor mental health, and food insecurity
+        - identify a surprising county or state pattern
+        - create a ranked chart of counties for one measure
+        - create a second artifact that investigates whether related measures move together
+        - write short interpretations that avoid individual-level claims
+      rendered_outputs:
+        - table of selected county health measures
+        - ranked chart of counties by a selected measure
+        - scatterplot or map investigating a related measure
+      knowledge_drop_candidates:
+        - PLACES estimates are model-based small-area estimates, not direct local survey counts
+        - county-level estimates describe places, not individuals
+        - health measures that seem related do not always rank counties the same way
+        - local public health data often supports prioritization, not causal claims
+      reproducibility_notes: Query CDC Socrata during exploration, then save a focused local extract for tutorial runtime.
+      local_data_plan: Save selected county measures as a prepared CSV/RDS; optionally save county geometry if mapping is promoted.
+      promotion_score: promising
+    notes: First public-health exploration. CDC PLACES is official, public domain, and designed for county/place/tract/ZCTA local health analysis.
+    misc_tutorials_path: ""
+    last_reviewed: 2026-06-02
+
+  - slug: acs-housing-affordability
+    title: ACS Housing Affordability
+    status: exploring
+    source_url: https://www.census.gov/programs-surveys/acs/data/data-via-api.html
+    license: Public domain
+    domain: housing
+    formats:
+      - API
+      - csv
+      - rds
+    size_estimate: Depends on geography and variables selected
+    candidate_tutorial: Housing affordability with Census ACS data
+    learning_goals:
+      - use ACS housing and income variables
+      - compare affordability across geographies
+      - distinguish medians, rates, estimates, and margins of error
+      - interpret rent burden and local variation
+    packages:
+      - tidycensus
+      - tidyverse
+      - sf
+    tutorial_fit:
+      target_audience: Students learning to use public housing data with AI support
+      final_artifact: A two-section Quarto report with a ranked bar chart and a state map of renter cost burden
+      analysis_path:
+        - identify ACS variables for rent, home value, income, and rent burden
+        - inspect geography, variable names, estimates, and margins of error
+        - summarize state affordability with a ranked bar chart
+        - interpret what rankings reveal about relative rent burden
+        - introduce geometry as shape data attached to state rows
+        - map renter cost burden across the United States
+        - compare what the map reveals that the bar chart does not
+        - write short interpretations for both artifacts
+      rendered_outputs:
+        - table of selected ACS housing variables
+        - ranked bar chart of highest rent-burden states
+        - choropleth map of state renter cost burden
+      knowledge_drop_candidates:
+        - ACS estimates describe sampled survey estimates, not a full count
+        - rent burden usually means spending 30 percent or more of income on rent and utilities
+        - county or state medians can hide within-place variation
+        - margins of error matter when comparing similar places
+        - geometry lets a data frame carry map shapes as a column
+      reproducibility_notes: Prepare a small local data file for tutorial runtime; do not query the Census API during render.
+      local_data_plan: Use tidycensus during exploration, then save reduced non-spatial and spatial teaching files.
+      promotion_score: promising
+    notes: Start here because ACS is a gold-standard public data source for housing and demographics.
+    misc_tutorials_path: ""
+    last_reviewed: 2026-06-02
+
+  - slug: zillow-home-values-rents
+    title: Zillow Home Values and Rents
+    status: exploring
+    source_url: https://www.zillow.com/research/data/
+    license: Zillow data terms require review
+    domain: housing
+    formats:
+      - csv
+    size_estimate: Depends on geography, measure, and date range selected
+    candidate_tutorial: Housing market trends with Zillow ZHVI and ZORI data
+    learning_goals:
+      - compare rent and home value trends over time
+      - distinguish index measures from raw prices
+      - reshape wide time-series data
+      - interpret monthly housing market changes
+    packages:
+      - readr
+      - tidyverse
+      - lubridate
+    tutorial_fit:
+      target_audience: Students interested in local housing market trends
+      final_artifact: A two-section Quarto report comparing rent trends and rent-vs-home-value growth across selected metros
+      analysis_path:
+        - inspect Zillow metadata fields and monthly columns
+        - reshape ZORI monthly columns into long format
+        - compare selected metro rent trends over time
+        - index ZORI and ZHVI to a common baseline
+        - compare rent growth with home-value growth
+        - create two polished line-chart artifacts
+        - write short interpretations of trend differences
+      rendered_outputs:
+        - printed sample of reshaped time-series data
+        - summary table for selected places
+        - line chart of rent trends over time
+        - indexed line chart comparing rent and home-value growth
+      knowledge_drop_candidates:
+        - ZHVI and ZORI are indexes, not simple raw transaction averages
+        - Zillow updates data monthly and CSV paths can change
+        - local trend comparisons depend on geography definitions
+      reproducibility_notes: Freeze a small prepared CSV or RDS so tutorial rendering does not depend on live Zillow downloads.
+      local_data_plan: Select a small set of geographies and dates, then save the prepared long-format file.
+      promotion_score: promising
+    notes: Engaging topic. Official CSV endpoints are live as of 2026-06-02; Zillow notes paths can change and data updates monthly.
+    misc_tutorials_path: ""
+    last_reviewed: 2026-06-02
+
+  - slug: building-permits-supply
+    title: Census Building Permits Survey Housing Supply
+    status: exploring
+    source_url: https://www.census.gov/permits
+    license: Public domain
+    domain: housing
+    formats:
+      - csv
+      - API
+    size_estimate: Depends on geography and years selected
+    candidate_tutorial: Housing supply with building permit data
+    learning_goals:
+      - use building permits as a housing supply indicator
+      - compare places over time
+      - interpret counts, rates, and geography levels
+      - understand what permits do and do not measure
+    packages:
+      - readr
+      - tidyverse
+      - lubridate
+    tutorial_fit:
+      target_audience: Students learning to analyze housing supply and local growth
+      final_artifact: A two-section Quarto report comparing county housing permits and multi-family supply patterns
+      analysis_path:
+        - inspect the 2025 county annual permit file and official field layout
+        - rank counties by total authorized housing units
+        - notice that total units and multi-family share tell different supply stories
+        - create a polished ranked bar chart
+        - compare single-family and multi-family permits across selected counties
+        - create a second artifact showing supply mix
+        - write short interpretations of what permits do and do not measure
+      rendered_outputs:
+        - county permit summary table
+        - ranked bar chart by authorized units
+        - supply-mix chart comparing single-family and multi-family permits
+      knowledge_drop_candidates:
+        - building permits measure authorized construction, not completed homes
+        - supply comparisons need geography and population context
+        - volatile small-place counts can mislead without context
+      reproducibility_notes: Use a prepared local extract for the tutorial; avoid live API or web downloads during render.
+      local_data_plan: Download the official county annual ASCII file during exploration, then save reduced prepared CSV/RDS files.
+      promotion_score: plausible
+    notes: Good supply-side complement to ACS/Zillow affordability work. Current exploration uses the 2025 final annual county file released on 2026-05-14.
+    misc_tutorials_path: ""
+    last_reviewed: 2026-06-02
+
+  # - slug: example-dataset
+  #   title: Example Dataset
+  #   status: discovered
+  #   source_url: https://example.com/dataset
+  #   license: Unknown
+  #   domain: public policy
+  #   formats:
+  #     - csv
+  #   size_estimate: Unknown
+  #   candidate_tutorial: ""
+  #   learning_goals:
+  #     - ""
+  #   packages:
+  #     - readr
+  #     - dplyr
+  #   tutorial_fit:
+  #     target_audience: ""
+  #     final_artifact: ""
+  #     analysis_path:
+  #       - inspect the dataset structure
+  #       - identify a useful pattern or data issue
+  #       - refine the analysis
+  #       - create a polished table or plot
+  #       - write a short interpretation
+  #     rendered_outputs:
+  #       - ""
+  #     knowledge_drop_candidates:
+  #       - ""
+  #     reproducibility_notes: ""
+  #     local_data_plan: ""
+  #     promotion_score: unreviewed
+  #   notes: ""
+  #   misc_tutorials_path: ""
+  #   last_reviewed: null

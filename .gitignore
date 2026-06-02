@@ -1,0 +1,12 @@
+# Local secrets
+.Renviron
+.renviron
+
+# R session artifacts
+.Rhistory
+.RData
+.Ruserdata
+Rplots.pdf
+
+# macOS
+.DS_Store

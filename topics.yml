@@ -1,0 +1,148 @@
+# Broad tutorial domains to investigate before choosing specific datasets.
+#
+# Use this file for subject-area ideas. Once a concrete dataset looks promising,
+# add it to datasets.yml and create an exploration folder.
+
+topics:
+  - slug: housing
+    title: Housing
+    status: investigating
+    why_promising: >
+      Housing has intuitive questions about affordability, rent, prices,
+      geography, migration, and local change. It can combine public data sources
+      such as Census ACS, Zillow, building permits, and local open data portals.
+    likely_data_sources:
+      - US Census ACS
+      - Zillow
+      - HUD
+      - local open data portals
+    likely_learning_goals:
+      - compare housing affordability across places
+      - work with geography and time
+      - interpret rates, medians, and local variation
+    possible_final_artifacts:
+      - a Quarto report comparing rent or home values across counties or cities
+      - a map or ranked table showing affordability patterns
+    notes: >
+      Strong first candidate because the questions are recognizable and the data
+      ecosystem is durable. First pass will compare ACS affordability, Zillow
+      values/rents, and Census building permit supply data.
+
+  - slug: public-health
+    title: Public Health
+    status: investigating
+    why_promising: >
+      Public health datasets support questions about outcomes, geography,
+      inequality, risk factors, and change over time.
+    likely_data_sources:
+      - CDC
+      - County Health Rankings
+      - state and local health departments
+    likely_learning_goals:
+      - distinguish counts, rates, and populations
+      - compare outcomes across places
+      - interpret missingness and reporting limits
+    possible_final_artifacts:
+      - a county-level health profile
+      - a trend report on a public health outcome
+    notes: >
+      Strong domain, but licensing, privacy, and interpretation need careful
+      review. First pass begins with CDC PLACES county estimates because it is
+      official, public domain, and designed for local public health analysis.
+
+  - slug: climate-weather
+    title: Climate and Weather
+    status: candidate
+    why_promising: >
+      Climate and weather data are public, durable, and naturally suited to
+      time-series summaries, maps, and anomaly detection.
+    likely_data_sources:
+      - NOAA
+      - NASA
+      - EPA
+    likely_learning_goals:
+      - summarize time series
+      - compare historical normals and recent observations
+      - interpret uncertainty, missingness, and station coverage
+    possible_final_artifacts:
+      - a local temperature or precipitation trend report
+      - a map or chart of extreme weather patterns
+    notes: Good candidate if the data can be reduced to a beginner-friendly size.
+
+  - slug: sports-analytics
+    title: Sports Analytics
+    status: candidate
+    why_promising: >
+      Sports data often has clear units of observation, familiar questions,
+      and many opportunities for rankings, comparisons, and visual summaries.
+    likely_data_sources:
+      - Lahman baseball database
+      - baseballr
+      - basketball or soccer public datasets
+    likely_learning_goals:
+      - compare players or teams
+      - work with grouped summaries
+      - evaluate performance metrics
+    possible_final_artifacts:
+      - a player comparison report
+      - a team performance trend analysis
+    notes: Baseball is especially promising because the R data ecosystem is mature.
+
+  - slug: finance-crypto
+    title: Finance and Crypto
+    status: candidate
+    why_promising: >
+      Finance and crypto data support accessible questions about prices,
+      returns, volatility, drawdowns, and time-series comparison.
+    likely_data_sources:
+      - Yahoo Finance
+      - FRED
+      - CoinGecko
+      - Nasdaq Data Link
+    likely_learning_goals:
+      - distinguish prices and returns
+      - visualize volatility over time
+      - compare assets on a common scale
+    possible_final_artifacts:
+      - a stock or ETF comparison report
+      - a Bitcoin volatility analysis
+    notes: Needs care to avoid investment advice; frame as data analysis, not forecasting.
+
+  - slug: transportation
+    title: Transportation
+    status: candidate
+    why_promising: >
+      Transportation data has concrete questions about delays, crashes,
+      commuting, routes, transit use, and infrastructure.
+    likely_data_sources:
+      - Bureau of Transportation Statistics
+      - NYC flights data
+      - NHTSA crash data
+      - local transit open data
+    likely_learning_goals:
+      - summarize delays, routes, or incidents
+      - compare categories with enough observations
+      - handle dates, times, and geography
+    possible_final_artifacts:
+      - a flight delay report
+      - a traffic crash or transit usage analysis
+    notes: Strong candidate because outputs are easy for students to inspect and interpret.
+
+  - slug: education
+    title: Education
+    status: candidate
+    why_promising: >
+      Education datasets support questions about tuition, outcomes,
+      demographics, school characteristics, and inequality.
+    likely_data_sources:
+      - College Scorecard
+      - National Center for Education Statistics
+      - state education departments
+    likely_learning_goals:
+      - compare institutions or places
+      - interpret outcome measures and denominators
+      - work with missing data and categorical filters
+    possible_final_artifacts:
+      - a college comparison report
+      - a tuition and outcomes summary
+    notes: Promising, but variable definitions and missingness may need extra scaffolding.

@@ -1,0 +1,17 @@
+state_abbr,state,county,geoid,county_label,total_population,adult_population,obesity,diabetes,current_smoking,physical_inactivity,poor_mental_health,food_insecurity
+MS,Mississippi,Holmes,28051,"Holmes, MS",16121,12171,52.2,21.7,23.3,42.8,19.4,35.2
+AR,Arkansas,Phillips,05107,"Phillips, AR",15304,11406,50.7,22.2,23.6,43.6,21.8,NA
+AL,Alabama,Dallas,01047,"Dallas, AL",36767,28171,50.2,21.4,18.9,36.3,19.4,27.8
+OH,Ohio,Meigs,39105,"Meigs, OH",21969,17454,49,16.7,24.7,33,21.5,15.3
+SC,South Carolina,Lee,45061,"Lee, SC",16153,13080,48.6,19,22.9,36.3,19.2,32.9
+LA,Louisiana,St. Landry,22097,"St. Landry, LA",81773,60183,48.1,17.3,22.5,35.7,21.5,NA
+GA,Georgia,Bibb,13021,"Bibb, GA",156197,118426,48.1,15.7,17.5,32.8,18.5,28.2
+MS,Mississippi,Coahoma,28027,"Coahoma, MS",20197,14716,47.8,21.7,23.2,42.5,19.3,33.2
+TN,Tennessee,Hardeman,47069,"Hardeman, TN",25529,20600,47.5,17.1,24,34.6,20.6,25.3
+TX,Texas,Willacy,48489,"Willacy, TX",20143,15352,47.4,19.5,16.7,39.8,19.8,34.8
+MS,Mississippi,Sunflower,28133,"Sunflower, MS",24811,19533,47.3,18.3,22.5,39.4,18.6,35.4
+OK,Oklahoma,Hughes,40063,"Hughes, OK",13407,10481,47.3,16.1,21.9,37.8,20.8,22.5
+SC,South Carolina,Williamsburg,45089,"Williamsburg, SC",30058,24305,47.2,18,20.1,35.8,17.9,26.9
+AL,Alabama,Russell,01113,"Russell, AL",58555,44348,47.1,17.5,20.3,33.9,20.7,26.3
+MS,Mississippi,Chickasaw,28017,"Chickasaw, MS",16812,12664,46.9,17.7,21.3,38.8,18.5,26.7
+OH,Ohio,Columbiana,39029,"Columbiana, OH",100511,80353,46.9,15.4,21.6,29.7,19.9,11.9
