@@ -8,5 +8,8 @@
 .Ruserdata
 Rplots.pdf
 
+# Rendered outputs
+*.html
+
 # macOS
 .DS_Store
