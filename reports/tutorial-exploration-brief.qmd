@@ -37,6 +37,126 @@ Consider: whether the dataset supports students using AI to do data science, wit
 
 The report is organized by topic and is meant to support discussion, not force a single cross-topic conclusion at the end.
 
+## Topics
+
+The table below lists each candidate dataset. Each row covers a single source and describes what information it contains.
+
+<style>
+  #topics-table { border-collapse: collapse; width: 100%; }
+  #topics-table th, #topics-table td { border: 1px solid #ccc; padding: 6px 10px; }
+</style>
+
+<table id="topics-table">
+<thead>
+  <tr><th>Topic</th><th>Source</th><th>What the data covers</th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="4">Housing</td>
+    <td>US Census ACS</td>
+    <td>State and county estimates of rent, household income, home values, renter counts, and cost burden.</td>
+  </tr>
+  <tr>
+    <td>Zillow</td>
+    <td>Monthly metro-level rent and home value indexes tracking market trends over time.</td>
+  </tr>
+  <tr>
+    <td>US Census Building Permits Survey</td>
+    <td>County-level counts of authorized residential construction units broken down by structure type.</td>
+  </tr>
+  <tr>
+    <td>HUD</td>
+    <td>Federal housing assistance records including fair market rents, voucher counts, and subsidized units.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Public Health</td>
+    <td>CDC</td>
+    <td>Model-based county-level estimates of health behaviors and outcomes including obesity, diabetes, smoking, and physical inactivity.</td>
+  </tr>
+  <tr>
+    <td>County Health Rankings</td>
+    <td>Annual county rankings combining health outcomes, behaviors, clinical care, and social and economic factors.</td>
+  </tr>
+  <tr>
+    <td>State and local health departments</td>
+    <td>State-specific surveillance data on disease incidence, vital statistics, and environmental exposures.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Climate and Weather</td>
+    <td>NOAA</td>
+    <td>Historical weather station observations including temperature, precipitation, and storm event records.</td>
+  </tr>
+  <tr>
+    <td>NASA</td>
+    <td>Satellite-derived climate data covering global surface temperatures, sea levels, and atmospheric conditions.</td>
+  </tr>
+  <tr>
+    <td>EPA</td>
+    <td>Air quality index measurements and emissions records by county and monitoring station.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Sports Analytics</td>
+    <td>Lahman baseball database</td>
+    <td>Complete historical MLB statistics covering players, teams, salaries, and awards from 1871 to present.</td>
+  </tr>
+  <tr>
+    <td>baseballr</td>
+    <td>Modern MLB Statcast and sabermetric data accessible via the Baseball Savant API.</td>
+  </tr>
+  <tr>
+    <td>Basketball and soccer datasets</td>
+    <td>Player and team performance statistics for NBA, soccer leagues, and other sports with varying historical coverage.</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Finance and Crypto</td>
+    <td>Yahoo Finance</td>
+    <td>Daily price, volume, and return data for stocks, ETFs, and major market indexes.</td>
+  </tr>
+  <tr>
+    <td>FRED</td>
+    <td>Federal Reserve economic time series including interest rates, inflation, GDP, and employment indicators.</td>
+  </tr>
+  <tr>
+    <td>CoinGecko</td>
+    <td>Historical price, volume, and market cap data for Bitcoin and thousands of other cryptocurrencies.</td>
+  </tr>
+  <tr>
+    <td>Nasdaq Data Link</td>
+    <td>Curated financial and alternative datasets covering equities, futures, and economic indicators.</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Transportation</td>
+    <td>Bureau of Transportation Statistics</td>
+    <td>National statistics on airline on-time performance, freight movement, highway safety, and transit ridership.</td>
+  </tr>
+  <tr>
+    <td>NYC flights data</td>
+    <td>On-time performance records for flights departing New York area airports.</td>
+  </tr>
+  <tr>
+    <td>NHTSA crash data</td>
+    <td>Federal records of U.S. traffic fatalities, crashes, and vehicle safety defects.</td>
+  </tr>
+  <tr>
+    <td>Local transit open data</td>
+    <td>City-level GTFS feeds and ridership counts for bus, rail, and other transit systems.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Education</td>
+    <td>College Scorecard</td>
+    <td>Federal database of college costs, graduation rates, post-graduation earnings, and student demographics.</td>
+  </tr>
+  <tr>
+    <td>National Center for Education Statistics</td>
+    <td>Comprehensive K–12 and postsecondary data including enrollment, test scores, and school characteristics.</td>
+  </tr>
+  <tr>
+    <td>State education departments</td>
+    <td>State report cards, assessment results, and district-level education statistics.</td>
+  </tr>
+</tbody>
+</table>
+
 ## Housing
 
 The housing candidates are strong in different ways. They all stay close to a recognizable policy problem, but each one teaches a different kind of analysis that students can drive with AI while they focus on the question, the comparison, and the interpretation.
@@ -194,3 +314,12 @@ correlations |>
 ![](../explorations/cdc-places-county-health/outputs/top-counties-by-health-measure.png)
 
 ![](../explorations/cdc-places-county-health/outputs/selected-county-health-profiles.png)
+
+```{r}
+read_csv(
+  "../explorations/cdc-places-county-health/outputs/pairwise_health_measure_correlations.csv",
+  show_col_types = FALSE
+) |>
+  mutate(correlation = round(correlation, 3)) |>
+  show_table("CDC PLACES: pairwise correlations among selected health measures")
+```
