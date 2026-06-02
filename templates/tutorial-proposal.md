@@ -2,7 +2,7 @@
 
 ## Core Idea
 
-One or two short paragraphs describing what students will create and what they will learn.
+One or two short paragraphs describing what students will create and what they will learn. Frame the tutorial around AI-assisted data science: students should use AI to prepare, compare, summarize, and interpret the data, while the tutorial keeps the analysis question and the final artifact at the center.
 
 ## Data Source
 
@@ -61,6 +61,8 @@ Pedagogical purpose:
 - 
 - 
 
+Keep the section description focused on the analysis task and the student decision-making, not on the underlying data-wrangling mechanics unless they are the actual learning goal.
+
 ### Section 2: <Section Title>
 
 Artifact:
@@ -77,6 +79,8 @@ Pedagogical purpose:
 
 - 
 - 
+
+If implementation details are needed, describe them only as the means to get to the analysis artifact and interpretation.
 
 ## File Format Notes
 
@@ -110,6 +114,12 @@ Record which file types the tutorial should use and why.
 - 
 - 
 - 
+
+## Report Brief
+
+If this exploration also has a project-level walkthrough report for review, note its location here.
+
+- `reports/<brief-name>.qmd`
 
 ## Open Questions
 

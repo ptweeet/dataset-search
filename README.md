@@ -16,6 +16,8 @@ Dataset promotion should follow the tutorial authoring guide at:
 
 Use that guide as the contract for deciding whether a dataset can support a normal `learnr` tutorial: an exploratory data path, AI-directed edits to `analysis.qmd`, rendered outputs students can inspect, useful knowledge drops, and a small published Quarto artifact.
 
+The project also keeps a higher-level walkthrough report in `reports/`. That report is for planning and review, not for student use. It should summarize the candidate datasets, the cleaned tables students would see, the section-level artifacts, and the reason each tutorial is worth teaching with AI support.
+
 ## Workflow
 
 1. Use `topics.yml` to track broad tutorial domains worth investigating.
@@ -24,8 +26,9 @@ Use that guide as the contract for deciding whether a dataset can support a norm
 4. Fill out `notes.md` from `templates/dataset-notes.md`.
 5. Use `explore.R` from `templates/explore.R` for lightweight inspection.
 6. Draft `tutorial-proposal.md` from `templates/tutorial-proposal.md`.
-7. Decide whether the dataset is rejected, kept for later, or promoted.
-8. Promote only prepared tutorial assets into `misc.tutorials`.
+7. Draft a project-level walkthrough in `reports/` when it helps compare candidates or explain findings to others.
+8. Decide whether the dataset is rejected, kept for later, or promoted.
+9. Promote only prepared tutorial assets into `misc.tutorials`.
 
 ## Statuses
 
@@ -99,6 +102,8 @@ The `tutorial_fit` section in `datasets.yml` records whether a dataset can becom
 - What domain facts, data quirks, or interpretation points could become knowledge drops?
 - Can the tutorial read local data without downloading during render?
 
+When writing `tutorial_fit`, keep the focus on AI-assisted data science work. The point is not to document every implementation step in detail; it is to show that a student can use AI to prepare data, compare measures, inspect outputs, and interpret what the result means.
+
 A dataset can be interesting but still have poor tutorial fit. Promote datasets that can support a clear sequence of small exercises ending in a meaningful result about the world.
 
 ## Exploration Artifact
@@ -135,6 +140,7 @@ Before moving a dataset into `misc.tutorials`, confirm:
 - final file format is chosen, such as `.rds`, `.xlsx`, `.geojson`, or `.duckdb`
 - final data file is small enough for the package
 - exploration notes identify the likely tutorial path
+- any companion `reports/` brief explains the candidate at a higher level for review or discussion
 
 Suggested destination:
 

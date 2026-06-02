@@ -1,0 +1,7 @@
+measure_x,measure_y,correlation
+Diabetes,Physical inactivity,0.8580129686425008
+Current smoking,Physical inactivity,0.8367948606474074
+Obesity,Physical inactivity,0.7501639826283529
+Obesity,Current smoking,0.7178733623014221
+Diabetes,Current smoking,0.7170373442599121
+Obesity,Diabetes,0.6848005090550758

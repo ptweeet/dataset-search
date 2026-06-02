@@ -1,0 +1,37 @@
+county_label,selection_reason,measure,prevalence
+"Holmes, MS",Highest obesity county; also high across related measures,Obesity,52.2
+"Holmes, MS",Highest obesity county; also high across related measures,Diabetes,21.7
+"Holmes, MS",Highest obesity county; also high across related measures,Current smoking,23.3
+"Holmes, MS",Highest obesity county; also high across related measures,Physical inactivity,42.8
+"Phillips, AR","High obesity, diabetes, and physical inactivity",Obesity,50.7
+"Phillips, AR","High obesity, diabetes, and physical inactivity",Diabetes,22.2
+"Phillips, AR","High obesity, diabetes, and physical inactivity",Current smoking,23.6
+"Phillips, AR","High obesity, diabetes, and physical inactivity",Physical inactivity,43.6
+"Dallas, AL","High obesity and diabetes, but less extreme smoking",Obesity,50.2
+"Dallas, AL","High obesity and diabetes, but less extreme smoking",Diabetes,21.4
+"Dallas, AL","High obesity and diabetes, but less extreme smoking",Current smoking,18.9
+"Dallas, AL","High obesity and diabetes, but less extreme smoking",Physical inactivity,36.3
+"St. Landry, LA",High obesity and smoking,Obesity,48.1
+"St. Landry, LA",High obesity and smoking,Diabetes,17.3
+"St. Landry, LA",High obesity and smoking,Current smoking,22.5
+"St. Landry, LA",High obesity and smoking,Physical inactivity,35.7
+"Bibb, GA",High obesity with a less extreme smoking profile,Obesity,48.1
+"Bibb, GA",High obesity with a less extreme smoking profile,Diabetes,15.7
+"Bibb, GA",High obesity with a less extreme smoking profile,Current smoking,17.5
+"Bibb, GA",High obesity with a less extreme smoking profile,Physical inactivity,32.8
+"Lyon, MN",High obesity but much lower diabetes and physical inactivity rankings,Obesity,45.1
+"Lyon, MN",High obesity but much lower diabetes and physical inactivity rankings,Diabetes,11
+"Lyon, MN",High obesity but much lower diabetes and physical inactivity rankings,Current smoking,15.1
+"Lyon, MN",High obesity but much lower diabetes and physical inactivity rankings,Physical inactivity,22.5
+"Hale, AL",High diabetes and physical inactivity with very high obesity,Obesity,44.5
+"Hale, AL",High diabetes and physical inactivity with very high obesity,Diabetes,19.3
+"Hale, AL",High diabetes and physical inactivity with very high obesity,Current smoking,18.3
+"Hale, AL",High diabetes and physical inactivity with very high obesity,Physical inactivity,34.2
+"Coweta, GA",High obesity but much lower smoking and physical inactivity rankings,Obesity,44.4
+"Coweta, GA",High obesity but much lower smoking and physical inactivity rankings,Diabetes,11.1
+"Coweta, GA",High obesity but much lower smoking and physical inactivity rankings,Current smoking,13.5
+"Coweta, GA",High obesity but much lower smoking and physical inactivity rankings,Physical inactivity,22.2
+"Webb, TX",High physical inactivity but lower smoking,Obesity,41
+"Webb, TX",High physical inactivity but lower smoking,Diabetes,15.4
+"Webb, TX",High physical inactivity but lower smoking,Current smoking,11.9
+"Webb, TX",High physical inactivity but lower smoking,Physical inactivity,33

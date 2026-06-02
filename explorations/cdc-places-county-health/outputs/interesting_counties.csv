@@ -1,0 +1,10 @@
+state_abbr,state,county,geoid,county_label,total_population,adult_population,obesity,diabetes,current_smoking,physical_inactivity,poor_mental_health,food_insecurity,selection_reason
+MS,Mississippi,Holmes,28051,"Holmes, MS",16121,12171,52.2,21.7,23.3,42.8,19.4,35.2,Highest obesity county; also high across related measures
+AR,Arkansas,Phillips,05107,"Phillips, AR",15304,11406,50.7,22.2,23.6,43.6,21.8,NA,"High obesity, diabetes, and physical inactivity"
+AL,Alabama,Dallas,01047,"Dallas, AL",36767,28171,50.2,21.4,18.9,36.3,19.4,27.8,"High obesity and diabetes, but less extreme smoking"
+LA,Louisiana,St. Landry,22097,"St. Landry, LA",81773,60183,48.1,17.3,22.5,35.7,21.5,NA,High obesity and smoking
+GA,Georgia,Bibb,13021,"Bibb, GA",156197,118426,48.1,15.7,17.5,32.8,18.5,28.2,High obesity with a less extreme smoking profile
+MN,Minnesota,Lyon,27083,"Lyon, MN",25262,18614,45.1,11,15.1,22.5,15.9,10.6,High obesity but much lower diabetes and physical inactivity rankings
+AL,Alabama,Hale,01065,"Hale, AL",14595,11112,44.5,19.3,18.3,34.2,19.4,25.6,High diabetes and physical inactivity with very high obesity
+GA,Georgia,Coweta,13077,"Coweta, GA",152882,118146,44.4,11.1,13.5,22.2,15.9,10.9,High obesity but much lower smoking and physical inactivity rankings
+TX,Texas,Webb,48479,"Webb, TX",267780,184751,41,15.4,11.9,33,17.7,25.9,High physical inactivity but lower smoking

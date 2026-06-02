@@ -13,7 +13,7 @@
 
 ## Why This Might Make a Good Tutorial
 
-- Potential learner audience:
+- Potential learner audience: students learning to use AI to do data science with a focus on asking the right question, choosing the right comparison, and interpreting the result
 - Main learning goal:
 - Supporting concepts:
 - Possible tutorial title:

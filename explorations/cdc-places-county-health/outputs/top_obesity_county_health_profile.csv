@@ -1,0 +1,61 @@
+county_label,measure,prevalence,percentile,prevalence_label
+"Holmes, MS",Obesity,52.2,1,52.2%
+"Holmes, MS",Diabetes,21.7,0.9986522911051213,21.7%
+"Holmes, MS",Current smoking,23.3,0.9519317160826595,23.3%
+"Holmes, MS",Physical inactivity,42.8,0.9986522911051213,42.8%
+"Phillips, AR",Obesity,50.7,0.9995507637017071,50.7%
+"Phillips, AR",Diabetes,22.2,0.9995507637017071,22.2%
+"Phillips, AR",Current smoking,23.6,0.9591194968553459,23.6%
+"Phillips, AR",Physical inactivity,43.6,1,43.6%
+"Dallas, AL",Obesity,50.2,0.9991015274034142,50.2%
+"Dallas, AL",Diabetes,21.4,0.9977538185085355,21.4%
+"Dallas, AL",Current smoking,18.9,0.7093441150044923,18.9%
+"Dallas, AL",Physical inactivity,36.3,0.9609164420485176,36.3%
+"Meigs, OH",Obesity,49,0.9986522911051213,49%
+"Meigs, OH",Diabetes,16.7,0.9101527403414196,16.7%
+"Meigs, OH",Current smoking,24.7,0.977538185085355,24.7%
+"Meigs, OH",Physical inactivity,33,0.8652291105121294,33%
+"Lee, SC",Obesity,48.6,0.9982030548068284,48.6%
+"Lee, SC",Diabetes,19,0.9851752021563343,19%
+"Lee, SC",Current smoking,22.9,0.9389038634321654,22.9%
+"Lee, SC",Physical inactivity,36.3,0.9609164420485176,36.3%
+"St. Landry, LA",Obesity,48.1,0.9973045822102425,48.1%
+"St. Landry, LA",Diabetes,17.3,0.9362084456424079,17.3%
+"St. Landry, LA",Current smoking,22.5,0.9236298292902066,22.5%
+"St. Landry, LA",Physical inactivity,35.7,0.9474393530997305,35.7%
+"Bibb, GA",Obesity,48.1,0.9973045822102425,48.1%
+"Bibb, GA",Diabetes,15.7,0.8279424977538186,15.7%
+"Bibb, GA",Current smoking,17.5,0.5664869721473496,17.5%
+"Bibb, GA",Physical inactivity,32.8,0.8544474393530997,32.8%
+"Coahoma, MS",Obesity,47.8,0.9968553459119497,47.8%
+"Coahoma, MS",Diabetes,21.7,0.9986522911051213,21.7%
+"Coahoma, MS",Current smoking,23.2,0.9478885893980233,23.2%
+"Coahoma, MS",Physical inactivity,42.5,0.9982030548068284,42.5%
+"Hardeman, TN",Obesity,47.5,0.9964061096136568,47.5%
+"Hardeman, TN",Diabetes,17.1,0.9272237196765498,17.1%
+"Hardeman, TN",Current smoking,24,0.9658580413297394,24%
+"Hardeman, TN",Physical inactivity,34.6,0.922282120395328,34.6%
+"Willacy, TX",Obesity,47.4,0.9959568733153639,47.4%
+"Willacy, TX",Diabetes,19.5,0.9914645103324349,19.5%
+"Willacy, TX",Current smoking,16.7,0.48203054806828394,16.7%
+"Willacy, TX",Physical inactivity,39.8,0.9941599281221922,39.8%
+"Sunflower, MS",Obesity,47.3,0.995058400718778,47.3%
+"Sunflower, MS",Diabetes,18.3,0.9730458221024259,18.3%
+"Sunflower, MS",Current smoking,22.5,0.9236298292902066,22.5%
+"Sunflower, MS",Physical inactivity,39.4,0.9932614555256065,39.4%
+"Hughes, OK",Obesity,47.3,0.995058400718778,47.3%
+"Hughes, OK",Diabetes,16.1,0.8688230008984726,16.1%
+"Hughes, OK",Current smoking,21.9,0.9070080862533693,21.9%
+"Hughes, OK",Physical inactivity,37.8,0.9820305480682839,37.8%
+"Williamsburg, SC",Obesity,47.2,0.9946091644204852,47.2%
+"Williamsburg, SC",Diabetes,18,0.9636118598382749,18%
+"Williamsburg, SC",Current smoking,20.1,0.8099730458221024,20.1%
+"Williamsburg, SC",Physical inactivity,35.8,0.9505840071877808,35.8%
+"Russell, AL",Obesity,47.1,0.9941599281221922,47.1%
+"Russell, AL",Diabetes,17.5,0.945193171608266,17.5%
+"Russell, AL",Current smoking,20.3,0.8283917340521114,20.3%
+"Russell, AL",Physical inactivity,33.9,0.8975741239892183,33.9%
+"Chickasaw, MS",Obesity,46.9,0.9932614555256065,46.9%
+"Chickasaw, MS",Diabetes,17.7,0.9555256064690026,17.7%
+"Chickasaw, MS",Current smoking,21.3,0.8814016172506739,21.3%
+"Chickasaw, MS",Physical inactivity,38.8,0.9901168014375562,38.8%
