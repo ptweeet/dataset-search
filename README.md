@@ -1,20 +1,10 @@
 # Dataset Search
 
-This project is a workspace for finding, evaluating, and shaping datasets before they become tutorials in:
-
-```text
-/Users/alecrogers/Desktop/projects/misc.tutorials
-```
+This project is a workspace for finding, evaluating, and shaping datasets before they become tutorials in the companion [`misc.tutorials`](https://github.com/ptweeet/misc.tutorials) package.
 
 The goal is to keep early dataset research messy and cheap here, while only moving curated, tutorial-ready material into `misc.tutorials`.
 
-Dataset promotion should follow the tutorial authoring guide at:
-
-```text
-/Users/alecrogers/Desktop/projects/ai-rules/claude-md/tutorials/CLAUDE.md
-```
-
-Use that guide as the contract for deciding whether a dataset can support a normal `learnr` tutorial: an exploratory data path, AI-directed edits to `analysis.qmd`, rendered outputs students can inspect, useful knowledge drops, and a small published Quarto artifact.
+Dataset promotion should follow the tutorial authoring guide in `misc.tutorials`. Use that guide as the contract for deciding whether a dataset can support a normal `learnr` tutorial: an exploratory data path, AI-directed edits to `analysis.qmd`, rendered outputs students can inspect, useful knowledge drops, and a small published Quarto artifact.
 
 The project also keeps a higher-level walkthrough report in `reports/`. That report is for planning and review, not for student use. It should summarize the candidate datasets, the cleaned tables students would see, the section-level artifacts, and the reason each tutorial is worth teaching with AI support.
 
@@ -142,10 +132,10 @@ Before moving a dataset into `misc.tutorials`, confirm:
 - exploration notes identify the likely tutorial path
 - any companion `reports/` brief explains the candidate at a higher level for review or discussion
 
-Suggested destination:
+Suggested destination in `misc.tutorials`:
 
 ```text
-/Users/alecrogers/Desktop/projects/misc.tutorials/inst/tutorials/<tutorial-name>/
+inst/tutorials/<tutorial-name>/
   tutorial.Rmd
   data/
     <dataset-file>
