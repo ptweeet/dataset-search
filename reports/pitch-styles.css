@@ -1,0 +1,64 @@
+/* Pitch report styles */
+
+body {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+h1.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  margin-top: 1.8rem;
+}
+
+.columns {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+
+.column img {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+/* Keep source image from getting too tall */
+.column:first-child img {
+  max-height: 260px;
+  object-fit: cover;
+  object-position: top;
+}
+
+hr {
+  margin: 3rem 0 1rem;
+  border-color: #dee2e6;
+}
+
+p em {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+figcaption {
+  font-size: 0.88rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+  font-style: italic;
+}

@@ -4,6 +4,8 @@
 
 - Slug:
 - Status:
+- Source graphic: (slug from graphics.yml, or "domain-first" if not graphic-driven)
+- Found via: graphic-first / domain-first
 - Source:
 - License:
 - Domain:

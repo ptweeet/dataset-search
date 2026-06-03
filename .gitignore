@@ -10,6 +10,7 @@ Rplots.pdf
 
 # Rendered outputs
 *.html
+*_files/
 
 # macOS
 .DS_Store

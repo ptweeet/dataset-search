@@ -1,0 +1,397 @@
+# Compelling graphics that could anchor a tutorial dataset.
+#
+# This is the top of the funnel. Log a graphic here first; only promote it
+# to datasets.yml once it clears all three gates (data available, AI can
+# approximate it, and there is a genuine mystery in the data).
+#
+# Gate checklist — record findings in the entry:
+#   (a) data_status:        is the underlying data publicly available?
+#   (b) ai_approximation:   can AI reproduce something close using that data?
+#   (c) mystery:            is there a built-in surprise students can solve?
+#
+# Copy the example entry below for each graphic you want to evaluate.
+
+graphics:
+
+  # ---------------------------------------------------------------------------
+  # HEALTH / SOCIAL BEHAVIOR
+  # ---------------------------------------------------------------------------
+
+  - slug: us-births-heatmap
+    title: "How Common Is Your Birthday? (Holiday and Friday the 13th Dips)"
+    publication: FiveThirtyEight
+    url: https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/
+    domain: health / social behavior
+    what_is_cool: >
+      A geom_tile heatmap of 20 years of daily US births reveals a clear annual
+      calendar — September lights up, Christmas goes nearly dark. The Friday the
+      13th deficit is visible as a recurring notch. The contrast is viscerally
+      dramatic without any summary statistics.
+    mystery: >
+      Why has the Christmas dip grown twice as deep in modern data as it was in
+      the 1970s? And why does Friday the 13th show a measurable ~800-birth
+      deficit each time it occurs? Scheduled births (C-sections, inductions)
+      let parents opt out of unlucky or inconvenient dates — students discover
+      that the shape of the calendar encodes social behavior, not just biology.
+    data_status: found
+    data_source_url: https://github.com/fivethirtyeight/data/tree/master/births
+    data_notes: >
+      Two CSVs on GitHub (1994–2003 CDC, 2000–2014 SSA). Also in the
+      fivethirtyeight R package as US_births_1994_2003 and US_births_2000_2014.
+      No API key needed. Very little cleaning required.
+    ai_approximation: confirmed
+    r_chart_type: geom_tile (month × day_of_month, fill = mean births)
+    status: dataset-created
+    linked_dataset: us-births-heatmap
+    notes: "CC-BY. Used in Duke STA 199. Exploration confirmed two-layered mystery: holiday dip + day-of-week confound. Tutorial proposal drafted 2026-06-03."
+
+  - slug: drug-use-by-age
+    title: "How Baby Boomers Get High (Drug Use Heatmap by Age Group)"
+    publication: FiveThirtyEight
+    url: https://fivethirtyeight.com/features/how-baby-boomers-get-high/
+    domain: health / social behavior
+    what_is_cool: >
+      A heatmap of 13 substances across 17 age groups shows drug use prevalence
+      as a vivid age-gradient. Marijuana peaks sharply at 18–25 and drops.
+      Pain relievers peak later and flatten. The pattern looks completely
+      different by substance — the chart makes you want to explain every row.
+    mystery: >
+      Almost every substance peaks in early adulthood — except alcohol, which
+      climbs with age. And why do older users who keep using actually use more
+      frequently than young users, even when fewer of them use at all? Students
+      discover the difference between prevalence (what share use) and frequency
+      (how often users use), a distinction the flat-looking "decline" curve hides.
+    data_status: found
+    data_source_url: https://github.com/fivethirtyeight/data/tree/master/drug-use-by-age
+    data_notes: >
+      drug-use-by-age.csv on GitHub: 17 age groups × 13 substances × 2 metrics
+      (usage %, median frequency). Also in fivethirtyeight R package as drug_use.
+      Wide format — pivot_longer() is the natural first wrangling step.
+    ai_approximation: untested
+    r_chart_type: geom_tile or geom_line (faceted by substance)
+    status: data-found
+    linked_dataset: ""
+    notes: "Source: SAMHSA NSDUH. Sensitive topic — frame as social epidemiology, not drug advice. CC-BY."
+
+  - slug: health-spend-life-expectancy
+    title: "Life Expectancy vs. Health Spending — the US Outlier"
+    publication: Our World in Data / Gapminder
+    url: https://ourworldindata.org/grapher/life-expectancy-vs-healthcare-expenditure
+    domain: health / international
+    what_is_cool: >
+      A scatter of health spending per capita vs. life expectancy across wealthy
+      nations. Every country traces a curve upward together over time. The US
+      shoots off to the right — spending 2–4× more than peers — while its life
+      expectancy line goes flat and eventually turns slightly downward relative
+      to peers.
+    mystery: >
+      The US spends by far the most on healthcare of any country — so why is
+      American life expectancy lower than in countries spending a fraction of
+      that? The first student instinct is that the US data must be wrong. The
+      second investigation — breaking down cause-of-death data (overdoses, guns,
+      car accidents) — reveals the gap is not about healthcare quality but about
+      what Americans die of that other countries mostly don't.
+    data_status: found
+    data_source_url: https://ourworldindata.org/grapher/life-expectancy-vs-healthcare-expenditure
+    data_notes: >
+      OWID chart has a direct CSV download button (CC-BY). The gapminder R
+      package covers 1952–2007 (GDP + life expectancy, 142 countries) and shows
+      the divergence trend. OECD health data via the OECD R package extends to
+      recent years with spending detail.
+    ai_approximation: untested
+    r_chart_type: geom_point + geom_text (country labels), gganimate for time
+    status: data-found
+    linked_dataset: ""
+    notes: "The gapminder R package makes this instantly loadable. The US outlier is detectable in both the gapminder (GDP proxy) and OWID (spending) versions."
+
+  # ---------------------------------------------------------------------------
+  # SPORTS
+  # ---------------------------------------------------------------------------
+
+  - slug: nba-hype
+    title: "How Many High School Stars Actually Make It in the NBA?"
+    publication: The Pudding
+    url: https://pudding.cool/2019/03/hype/
+    domain: sports
+    what_is_cool: >
+      A funnel/flow visualization of 1,873 top-ranked high school players
+      cascading through career checkpoints: drafted, good career, All-Star,
+      superstar. The funnel is dramatic — most circles drop out early — and
+      unranked draftees like Stephen Curry and Damian Lillard sit in the
+      superstar column.
+    mystery: >
+      Why do unranked high school players who still got drafted perform
+      comparably to top-10 recruits at the superstar level? The first plot
+      shows the expected funnel (rankings predict success on average). The
+      second comparison — top-100 vs. top-10 vs. unranked draftees — reveals
+      that at the extreme right tail, recruit ranking loses predictive power.
+      Outliers break the rule in a way the average hides.
+    data_status: found
+    data_source_url: https://github.com/the-pudding/data/tree/master/hype
+    data_notes: >
+      players.csv (1,873 rows): name, recruit rank/year, draft details,
+      college, WS48, VORP, PIPM, Wins Added (career and top-5 season), total
+      seasons. Also paths.R for reproducibility. No joins needed; all NBA
+      stats are in the CSV. Data through ~2019 draft class.
+    ai_approximation: untested
+    r_chart_type: geom_point (jittered by career tier), geom_boxplot by recruit tier
+    status: data-found
+    linked_dataset: ""
+    notes: "Stephen Curry is in the dataset. Recruit rankings from 247Sports; NBA stats from Basketball-Reference. The Pudding data, no restrictive license noted."
+
+  # ---------------------------------------------------------------------------
+  # TRANSPORTATION / STATISTICS
+  # ---------------------------------------------------------------------------
+
+  - slug: airline-safety
+    title: "Do Past Airline Crashes Predict Future Ones?"
+    publication: FiveThirtyEight
+    url: https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/
+    domain: transportation / statistics
+    what_is_cool: >
+      A scatter of each airline's crash record in 1985–1999 vs. 2000–2014.
+      You expect a strong correlation — unsafe airlines stay unsafe. Instead
+      the cloud is nearly random. Some of the "safest" first-period airlines
+      had second-period incidents; some of the worst improved dramatically.
+    mystery: >
+      If an airline had multiple fatal crashes in the 1990s, should you avoid
+      it today? The data says almost no — correlation between the two periods
+      is close to zero. The mystery is why: students discover regression to the
+      mean and what rare-event statistics actually tell you about inherent risk.
+      Normalizing by seat-kilometers to control for airline size is the second step.
+    data_status: found
+    data_source_url: https://github.com/fivethirtyeight/data/tree/master/airline-safety
+    data_notes: >
+      airline-safety.csv: 56 rows, one per airline. Columns: airline,
+      avail_seat_km_per_week, incidents/fatal_accidents/fatalities for
+      1985–99 and 2000–14. Also in fivethirtyeight R package as airline_safety.
+      CC-BY. 56-row dataset — students can see every observation.
+    ai_approximation: untested
+    r_chart_type: geom_point (period 1 vs. period 2), geom_text labels
+    status: data-found
+    linked_dataset: ""
+    notes: "Source: Aviation Safety Network. Natural vehicle for teaching that rare events have high variance and small-sample comparisons between periods are unreliable."
+
+  # ---------------------------------------------------------------------------
+  # FASHION / GENDER
+  # ---------------------------------------------------------------------------
+
+  - slug: womens-pockets
+    title: "Women's Pockets Are Inferior"
+    publication: The Pudding
+    url: https://pudding.cool/2018/08/pockets/
+    domain: fashion / gender
+    what_is_cool: >
+      A scatter of measured pocket dimensions — height vs. width — for 80 pairs
+      of jeans across 20 brands, with men's and women's jeans as groups. The
+      cloud of women's points sits in a completely different quadrant. The
+      separation is so total it looks like a data error.
+    mystery: >
+      Men's and women's jeans are sold at the same waist sizes — so why are
+      women's pockets on average 48% shorter? The first guess (anatomy) breaks
+      when students notice waistband size is controlled for. The functional
+      columns — can a phone fit? a hand? a wallet? — make the second comparison
+      concrete. Students discover deliberate design choice embedded in the data.
+    data_status: found
+    data_source_url: https://github.com/the-pudding/data/tree/master/pockets
+    data_notes: >
+      measurements.csv (80 rows): brand, style, men/women designation, waistband
+      size, price, fabric, front/back pocket height and width variants.
+      measurementRectangles.json has computed fit areas for phone, pen, wallet,
+      and hand. The functional fit columns (can a phone fit?) drive the
+      second artifact.
+    ai_approximation: untested
+    r_chart_type: geom_point / geom_jitter (color by gender), geom_rect for reference objects
+    status: data-found
+    linked_dataset: ""
+    notes: "80 rows — small enough for students to inspect every observation. Data from 2018. No restrictive license noted."
+
+  # ---------------------------------------------------------------------------
+  # BEAUTY / RACE
+  # ---------------------------------------------------------------------------
+
+  - slug: makeup-shades
+    title: "The Diversity of Makeup Foundation Shades"
+    publication: The Pudding
+    url: https://pudding.cool/2018/06/makeup-shades/
+    domain: beauty / race
+    what_is_cool: >
+      A dot plot of foundation shades from brands in the US, Nigeria, India,
+      and Japan — each dot literally colored its own hex value on a lightness
+      axis. The US brand cluster sits overwhelmingly in the lightest quarter.
+      The data is the color.
+    mystery: >
+      If Fenty Beauty launched with 40 shades specifically to cover all skin
+      tones, why does its lightness distribution look so different from the
+      rest of the market — and why do US, Indian, and Nigerian brands each
+      cluster differently? Students discover that a brand's shade distribution
+      encodes its implicit assumptions about who counts as a customer.
+    data_status: found
+    data_source_url: https://github.com/the-pudding/data/tree/master/makeup-shades
+    data_notes: >
+      shades.csv: brand, product, hex, H, S, V, L (CIE Lab lightness 0–1),
+      group (brand grouping 0–7). L column is pre-computed so students skip
+      the color math. Also on TidyTuesday 2021-03-30 for easy tidytuesdayR
+      access. The hex column enables geom_point(fill = I(hex)) — no color
+      scale needed.
+    ai_approximation: untested
+    r_chart_type: geom_point (fill = I(hex)), density ridgelines by brand group
+    status: data-found
+    linked_dataset: ""
+    notes: "Countries: US, Nigeria, India, Japan. Data from May 2018 — Fenty launched 2017 so competitive landscape is well captured."
+
+  # ---------------------------------------------------------------------------
+  # ENTERTAINMENT / GENDER
+  # ---------------------------------------------------------------------------
+
+  - slug: bechdel-roi
+    title: "The Dollar-and-Cents Case Against Hollywood's Exclusion of Women"
+    publication: FiveThirtyEight
+    url: https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/
+    domain: entertainment / gender
+    what_is_cool: >
+      A scatter of movie budget vs. return on investment, with Bechdel test
+      pass/fail as color. The cloud of passing films sits notably higher on
+      ROI at every budget level. Lower budgets, higher returns for films with
+      meaningful female characters — counterintuitive and clean.
+    mystery: >
+      If movies that pass the Bechdel test have higher median ROI than those
+      that fail, why does Hollywood still make so few of them? The first pass
+      looks like a clear financial argument. The second plot — tracking Bechdel
+      pass rates over decades — reveals the rate has barely moved despite the
+      data, which opens a real puzzle about why evidence doesn't change
+      industry behavior.
+    data_status: found
+    data_source_url: https://github.com/fivethirtyeight/data/tree/master/bechdel
+    data_notes: >
+      movies.csv (~1,794 movies, 1970–2013): Bechdel rating (0–3), budget,
+      domestic/international gross, inflation-adjusted figures. Also in the
+      fivethirtyeight R package as bechdel. BechdelTest.com is the live source.
+      CC-BY.
+    ai_approximation: untested
+    r_chart_type: geom_point (budget vs. ROI, color by pass/fail), geom_line (pass rate over time)
+    status: data-found
+    linked_dataset: ""
+    notes: "Genre is a confound worth exploring as a second step — action films may drive the pattern. fivethirtyeight R package makes loading trivial: data(bechdel)."
+
+  # ---------------------------------------------------------------------------
+  # ENTERTAINMENT / ART
+  # ---------------------------------------------------------------------------
+
+  - slug: bob-ross
+    title: "A Statistical Analysis of the Work of Bob Ross"
+    publication: FiveThirtyEight
+    url: https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/
+    domain: entertainment / art
+    what_is_cool: >
+      A presence/absence matrix of 67 painting elements (trees, mountains,
+      clouds, cabins, lakes) across all 403 Bob Ross episodes. Trees appear in
+      over 90% of paintings. "Happy little trees" is literally measurable.
+      The co-occurrence structure — which elements cluster together — is where
+      the real surprise lives.
+    mystery: >
+      If Bob almost always painted trees, mountains, and clouds, why do cabins
+      appear in only ~18% of paintings — and why do guest-artist episodes almost
+      never include his signature elements? The first look reveals near-certainty
+      of trees. The second comparison — guest vs. non-guest episodes — shows
+      Bob's guests paint measurably differently from him. Certain combinations
+      (ocean + mountain) almost never appear together even though both are
+      common individually.
+    data_status: found
+    data_source_url: https://github.com/fivethirtyeight/data/tree/master/bob-ross
+    data_notes: >
+      elements-by-episode.csv (403 rows × ~69 columns): binary columns for
+      each of 67 painting elements plus episode info. Also in fivethirtyeight
+      R package as bob_ross and on TidyTuesday 2019-08-06. The binary structure
+      means almost no wrangling after a single pivot_longer() call.
+    ai_approximation: untested
+    r_chart_type: geom_tile (element heatmap), geom_col (element frequency)
+    status: data-found
+    linked_dataset: ""
+    notes: "CC-BY. One of the most beloved teaching datasets in R. Guest vs. non-guest is a clean natural experiment built into the data."
+
+  # ---------------------------------------------------------------------------
+  # MUSIC / POP CULTURE
+  # ---------------------------------------------------------------------------
+
+  - slug: love-songs-billboard
+    title: "Is the Love Song Dying?"
+    publication: The Pudding
+    url: https://pudding.cool/2024/11/love-songs/
+    domain: music / pop culture
+    what_is_cool: >
+      A beeswarm/bubble chart of every top-10 Billboard hit from 1959–2023,
+      bubble size representing weeks on chart, color and position indicating
+      love-song type (serenade, desire, heartbreak, non-love). The shift in
+      the cloud over six decades is immediately visible.
+    mystery: >
+      Serenades fell from 23% of top songs to 12% — but does that mean love
+      songs are dying, or just changing? The first decade-by-decade plot shows
+      a clear decline. The second breakdown — by subtype — reveals that "desire"
+      and "heartbreak" categories have grown, so the genre is migrating rather
+      than disappearing. The GPT-labeling methodology also opens a discussion
+      about what measurement captures and what it misses.
+    data_status: candidate
+    data_source_url: https://github.com/the-pudding/pop-love-songs
+    data_notes: >
+      GitHub repo confirmed (SvelteKit project). Raw data CSVs are in src/data
+      — needs a browse of that directory to confirm column structure. Article
+      notes the data is downloadable. Published November 2024.
+    ai_approximation: untested
+    r_chart_type: geom_point / ggbeeswarm, geom_area (share over time)
+    status: candidate
+    linked_dataset: ""
+    notes: "Very fresh (Nov 2024). Natural companion to the tidyr billboard dataset the professor already knows. Data status needs confirmation — browse src/data in the repo."
+
+  - slug: anthem-diva-scores
+    title: "Quantifying the Diva-ness of 138 National Anthem Performances"
+    publication: The Pudding
+    url: https://pudding.cool/2024/02/anthems/
+    domain: music / pop culture
+    what_is_cool: >
+      Pitch-deviation line charts — one per performance, transposed to the same
+      key — stacked and colored to show who follows the melody and who reinvents
+      it. The visual looks like a seismograph: flat lines for country artists,
+      wild spikes for R&B. Chaka Khan's line looks like a different song entirely.
+    mystery: >
+      Fergie's 2018 Super Bowl anthem became instantly viral as the worst ever
+      — so why does her Diva Score rank only 14th? R&B artists consistently
+      score higher than country artists — but Fergie was melodically less
+      deviant than Chaka Khan or Whitney Houston. Her strangeness was in timbre
+      and pronunciation, which the pitch metric can't capture. Students confront
+      what quantification misses.
+    data_status: candidate
+    data_source_url: https://github.com/the-pudding/data
+    data_notes: >
+      The Pudding data repo confirmed. Specific anthems subfolder existence
+      needs verification — check github.com/the-pudding/data for an anthems
+      directory published around February 2024. If absent, pitch data can be
+      reconstructed from Tony (open-source melody transcription, cited in
+      article).
+    ai_approximation: untested
+    r_chart_type: geom_line (pitch timelines), geom_col (ranked diva scores), geom_boxplot by genre
+    status: candidate
+    linked_dataset: ""
+    notes: "Published February 2024. The Fergie paradox is a clean example of teaching measurement validity. Data availability needs confirmation before promoting."
+
+  # ---------------------------------------------------------------------------
+  # EXAMPLE TEMPLATE — copy and fill for new candidates
+  # ---------------------------------------------------------------------------
+
+  # - slug: example-graphic
+  #   title: ""
+  #   publication: ""
+  #   url: ""
+  #   domain: ""
+  #   what_is_cool: >
+  #
+  #   mystery: >
+  #
+  #   data_status: unknown      # unknown / found / unavailable
+  #   data_source_url: ""
+  #   data_notes: ""
+  #   ai_approximation: untested  # untested / promising / confirmed / failed
+  #   r_chart_type: ""
+  #   status: candidate           # candidate / data-found / dataset-created / rejected
+  #   linked_dataset: ""
+  #   notes: ""

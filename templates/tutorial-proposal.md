@@ -4,6 +4,12 @@
 
 One or two short paragraphs describing what students will create and what they will learn. Frame the tutorial around AI-assisted data science: students should use AI to prepare, compare, summarize, and interpret the data, while the tutorial keeps the analysis question and the final artifact at the center.
 
+## Source Graphic
+
+- Graphic: (title and URL, or slug from graphics.yml)
+- What was cool about it:
+- Mystery it raised:
+
 ## Data Source
 
 - Source:

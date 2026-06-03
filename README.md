@@ -10,15 +10,18 @@ The project also keeps a higher-level walkthrough report in `reports/`. That rep
 
 ## Workflow
 
-1. Use `topics.yml` to track broad tutorial domains worth investigating.
-2. Add specific candidate datasets to `datasets.yml`.
-3. Create an exploration folder under `explorations/`.
-4. Fill out `notes.md` from `templates/dataset-notes.md`.
-5. Use `explore.R` from `templates/explore.R` for lightweight inspection.
-6. Draft `tutorial-proposal.md` from `templates/tutorial-proposal.md`.
-7. Draft a project-level walkthrough in `reports/` when it helps compare candidates or explain findings to others.
-8. Decide whether the dataset is rejected, kept for later, or promoted.
-9. Promote only prepared tutorial assets into `misc.tutorials`.
+Start from a cool graphic, not from a domain. `topics.yml` is a loose domain filter that shapes where to look — it is not the entry point.
+
+1. **Hunt for a compelling graphic.** Browse data journalism outlets: NYT Graphics, The Pudding, Reuters Graphics, Our World in Data, FiveThirtyEight (archived), Washington Post Graphics. Use `topics.yml` as a rough filter for domains worth focusing on. Log every promising find in `graphics.yml`.
+2. **Apply the three gates.** A graphic clears the bar when all of the following are true: (a) the underlying data is publicly available, (b) AI can approximate the graphic using that data, and (c) there is a genuine mystery in the data students can solve. Record findings directly in the `graphics.yml` entry.
+3. **Promote to a dataset candidate.** Once all three gates pass, add an entry to `datasets.yml` with `source_graphic` pointing to the `graphics.yml` slug and `found_via: graphic-first`.
+4. Create an exploration folder under `explorations/`.
+5. Fill out `notes.md` from `templates/dataset-notes.md`.
+6. Use `explore.R` from `templates/explore.R` for lightweight inspection.
+7. Draft `tutorial-proposal.md` from `templates/tutorial-proposal.md`.
+8. Draft a project-level walkthrough in `reports/` when it helps compare candidates or explain findings to others.
+9. Decide whether the dataset is rejected, kept for later, or promoted.
+10. Promote only prepared tutorial assets into `misc.tutorials`.
 
 ## Statuses
 
@@ -35,8 +38,9 @@ The project also keeps a higher-level walkthrough report in `reports/`. That rep
 ```text
 dataset-search/
   README.md
-  topics.yml
-  datasets.yml
+  topics.yml          <- domain filter; shapes where to look, not what to find
+  graphics.yml        <- top of funnel; one entry per compelling graphic candidate
+  datasets.yml        <- promoted from graphics.yml once all three gates pass
   explorations/
     dataset-name/
       notes.md

@@ -35,8 +35,6 @@ This brief summarizes the dataset explorations that look most promising for new 
 
 Consider: whether the dataset supports students using AI to do data science, with a clear learner path, a compelling question, durable source data, and a final artifact that says something meaningful.
 
-The report is organized by topic and is meant to support discussion, not force a single cross-topic conclusion at the end.
-
 ## Topics
 
 The table below lists each candidate dataset. Each row covers a single source and describes what information it contains.

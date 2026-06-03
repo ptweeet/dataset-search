@@ -4,9 +4,61 @@
 # Keep detailed notes in explorations/<slug>/notes.md.
 
 datasets:
+  - slug: us-births-heatmap
+    title: US Daily Births Heatmap
+    status: exploring
+    source_graphic: us-births-heatmap
+    found_via: graphic-first
+    source_url: https://github.com/fivethirtyeight/data/tree/master/births
+    license: CC-BY
+    domain: social behavior / health
+    formats:
+      - R package (fivethirtyeight)
+      - csv
+    size_estimate: ~7,305 rows (one per calendar day, 1994–2014), 5 columns
+    candidate_tutorial: When Are Americans Born? A US Birth Calendar
+    learning_goals:
+      - create a calendar heatmap with geom_tile
+      - combine two overlapping datasets with bind_rows and filter
+      - pivot between wide and long formats
+      - interpret aggregate patterns vs. individual variation
+    packages:
+      - fivethirtyeight
+      - dplyr
+      - ggplot2
+    tutorial_fit:
+      target_audience: Students learning to explore public data with AI support
+      final_artifact: A two-section Quarto report with a birth calendar heatmap and a historical trend comparison
+      analysis_path:
+        - load and combine both birth datasets
+        - compute average births by month and day of month
+        - create a calendar heatmap and notice the holiday dips
+        - investigate the Christmas dip specifically — how deep is it?
+        - compare the Christmas dip in the early vs. late period
+        - discover the scheduled-birth mechanism via the day-of-week pattern
+        - create a second artifact showing the trend over time
+        - write interpretations connecting the pattern to a real-world mechanism
+      rendered_outputs:
+        - calendar heatmap (month × day of month, fill = mean births)
+        - line chart or bar chart showing Christmas births over time
+      knowledge_drop_candidates:
+        - September is the most common birth month because of December conception patterns
+        - scheduled deliveries (C-sections and inductions) let families avoid inconvenient dates
+        - the day-of-week dip on weekends confirms that scheduled births drive the calendar pattern
+        - Friday the 13th shows a measurable deficit of ~800 births per occurrence
+        - the Christmas dip grew over decades as scheduled deliveries became more common
+      reproducibility_notes: Data loads from the fivethirtyeight R package with no API key; also available as CSV on GitHub.
+      local_data_plan: Save a combined prepared RDS from both package datasets for tutorial runtime.
+      promotion_score: promote
+    notes: "Exploration complete. Two-layered mystery confirmed. Tutorial proposal drafted."
+    misc_tutorials_path: ""
+    last_reviewed: 2026-06-03
+
   - slug: cdc-places-county-health
     title: CDC PLACES County Health Measures
     status: exploring
+    source_graphic: ""
+    found_via: domain-first
     source_url: https://www.cdc.gov/places/
     license: Public domain
     domain: public health
@@ -55,6 +107,8 @@ datasets:
   - slug: acs-housing-affordability
     title: ACS Housing Affordability
     status: exploring
+    source_graphic: ""
+    found_via: domain-first
     source_url: https://www.census.gov/programs-surveys/acs/data/data-via-api.html
     license: Public domain
     domain: housing
@@ -105,6 +159,8 @@ datasets:
   - slug: zillow-home-values-rents
     title: Zillow Home Values and Rents
     status: exploring
+    source_graphic: ""
+    found_via: domain-first
     source_url: https://www.zillow.com/research/data/
     license: Zillow data terms require review
     domain: housing
@@ -151,6 +207,8 @@ datasets:
   - slug: building-permits-supply
     title: Census Building Permits Survey Housing Supply
     status: exploring
+    source_graphic: ""
+    found_via: domain-first
     source_url: https://www.census.gov/permits
     license: Public domain
     domain: housing
@@ -197,6 +255,8 @@ datasets:
   # - slug: example-dataset
   #   title: Example Dataset
   #   status: discovered
+  #   source_graphic: ""      # slug from graphics.yml; blank if found domain-first
+  #   found_via: graphic-first  # or: domain-first
   #   source_url: https://example.com/dataset
   #   license: Unknown
   #   domain: public policy
