@@ -12,5 +12,9 @@ Rplots.pdf
 *.html
 *_files/
 
+# Exception: docs/ is the GitHub Pages publish directory
+!docs/
+!docs/*.html
+
 # macOS
 .DS_Store
